@@ -10,6 +10,34 @@ window.addEventListener('scroll', () => {
   }
 });
 
+// Data Dummy Pengumuman & Jadwal
+const pengumumanData = [
+  {
+    id: 1,
+    tgl: "12",
+    bln: "Agustus",
+    judul: "Kerja Bakti Massal Jelang 17-an",
+    deskripsi: "Seluruh warga diimbau untuk berpartisipasi dalam pembersihan lingkungan dan pemasangan bendera merah putih.",
+    lokasi: "Seluruh Wilayah Kelurahan"
+  },
+  {
+    id: 2,
+    tgl: "15",
+    bln: "Agustus",
+    judul: "Posyandu Balita & Lansia",
+    deskripsi: "Pemeriksaan kesehatan gratis dan pemberian makanan tambahan bergizi (PMT) untuk balita dan lansia.",
+    lokasi: "Balai RW 05"
+  },
+  {
+    id: 3,
+    tgl: "20",
+    bln: "Agustus",
+    judul: "Pelatihan Kemasan UMKM",
+    deskripsi: "Bimbingan teknis mendesain kemasan modern untuk ibu-ibu PKK dan pelaku usaha mikro.",
+    lokasi: "Aula Kelurahan"
+  }
+];
+
 // Data Dummy untuk 9 RW
 const rwData = [
   {
@@ -181,8 +209,32 @@ window.addEventListener('click', (e) => {
   }
 });
 
+// Render Pengumuman Cards
+const pengumumanGrid = document.getElementById('pengumuman-grid');
+function renderPengumuman() {
+  if (!pengumumanGrid) return;
+  pengumumanGrid.innerHTML = '';
+  pengumumanData.forEach(item => {
+    const card = document.createElement('div');
+    card.className = 'pengumuman-card animate-on-scroll';
+    card.innerHTML = `
+      <div class="pengumuman-date">
+        <span class="tgl">${item.tgl}</span>
+        <span class="bln">${item.bln}</span>
+      </div>
+      <div class="pengumuman-content">
+        <h3>${item.judul}</h3>
+        <p>${item.deskripsi}</p>
+        <span class="lokasi">📍 ${item.lokasi}</span>
+      </div>
+    `;
+    pengumumanGrid.appendChild(card);
+  });
+}
+
 // Initialize
 document.addEventListener('DOMContentLoaded', () => {
+  if (pengumumanGrid) renderPengumuman();
   if (rwGrid) renderCards();
   if (document.getElementById('proker-grid')) renderProkers();
 });
