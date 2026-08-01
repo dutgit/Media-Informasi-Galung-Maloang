@@ -2,7 +2,7 @@ import { defineConfig } from 'vite'
 import { resolve } from 'path'
 
 export default defineConfig({
-  base: './', // Menjadikan path aset relatif agar berfungsi di GitHub Pages (subfolder)
+  base: '/Media-Informasi-Galung-Maloang/', // Menjadikan path aset sesuai dengan nama repository GitHub Pages
   build: {
     rollupOptions: {
       input: {
