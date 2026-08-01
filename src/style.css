@@ -502,8 +502,13 @@ footer {
   .potensi { padding: 4rem 5%; }
   .modal-text { padding: 1.5rem; }
   .rw-grid { grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1.5rem; }
+  .grid-gallery { grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1.5rem; }
+  .modal-header-img { height: 200px; }
   .stat-card h3 { font-size: 2.5rem; }
   .stat-card { padding: 1.5rem; }
+  
+  #btn-back-to-top { right: 15px; bottom: 15px; }
+  #btn-text-size { left: 15px; bottom: 15px; }
 }
 
 /* Profil KKN & Proker Gallery Styles */
