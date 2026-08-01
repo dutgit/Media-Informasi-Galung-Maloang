@@ -117,6 +117,36 @@ h1, h2, h3 {
   color: var(--accent-color);
 }
 
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+  z-index: 1001;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background-color: var(--text-light);
+  border-radius: 3px;
+  transition: var(--transition);
+}
+
+.navbar.scrolled .hamburger span {
+  background-color: var(--primary-color);
+}
+
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
 /* Hero Section */
 .hero {
   position: relative;
@@ -479,15 +509,31 @@ footer {
     padding: 1rem 5%;
     gap: 0.8rem;
   }
-  .nav-links {
+  .hamburger {
     display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
+  }
+  .nav-links {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 250px;
+    height: 100vh;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
+    gap: 2rem;
+    transition: var(--transition);
+    box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+  }
+  .nav-links.active {
+    right: 0;
   }
   .nav-links a {
     margin-left: 0;
-    font-size: 0.9rem;
+    font-size: 1.2rem;
+    color: var(--text-dark) !important;
   }
   .hero h1 { font-size: 2.5rem; }
   .hero p { font-size: 1.05rem; }
@@ -724,5 +770,86 @@ footer {
   .proker-text p {
     font-size: 1rem;
   }
+}
+
+/* --- Floating Buttons (Back to Top & Text Size) --- */
+#btn-back-to-top, #btn-text-size {
+  display: none;
+  position: fixed;
+  bottom: 30px;
+  background-color: var(--accent-color);
+  color: var(--primary-color);
+  border: none;
+  outline: none;
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  font-weight: bold;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  transition: var(--transition);
+  z-index: 999;
+  align-items: center;
+  justify-content: center;
+}
+
+#btn-back-to-top {
+  right: 30px;
+}
+
+#btn-text-size {
+  left: 30px;
+  display: flex; /* Always visible */
+}
+
+#btn-back-to-top:hover, #btn-text-size:hover {
+  background-color: #ffc333;
+  transform: translateY(-3px);
+}
+
+#btn-back-to-top.show {
+  display: flex;
+}
+
+/* --- Accessibility Large Text --- */
+body.large-text {
+  font-size: 1.15rem;
+}
+body.large-text h1 { font-size: 120%; }
+body.large-text h2 { font-size: 120%; }
+body.large-text h3 { font-size: 120%; }
+body.large-text p { font-size: 1.15rem; }
+
+/* --- Scroll Animations --- */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.animate-on-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* --- WhatsApp Button in RW Modal --- */
+.btn-whatsapp {
+  display: inline-block;
+  margin-top: 1.5rem;
+  padding: 0.8rem 1.5rem;
+  background-color: #25D366;
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 50px;
+  transition: var(--transition);
+  box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+}
+
+.btn-whatsapp:hover {
+  background-color: #1ebe5d;
+  transform: translateY(-2px);
+  color: white;
 }
 

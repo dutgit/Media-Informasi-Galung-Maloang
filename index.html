@@ -14,6 +14,11 @@
     <!-- Navbar -->
     <nav class="navbar">
       <div class="logo">Galung Maloang</div>
+      <div class="hamburger" id="hamburger-menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
       <div class="nav-links">
         <a href="index.html#hero">Beranda</a>
         <a href="profil.html">Profil KKN</a>
@@ -22,7 +27,7 @@
     </nav>
 
     <!-- Hero Section -->
-    <header id="hero" class="hero">
+    <header id="hero" class="hero animate-on-scroll">
       <div class="hero-overlay"></div>
       <div class="hero-content">
         <h1>Jelajahi Potensi<br><span>Galung Maloang</span></h1>
@@ -34,7 +39,7 @@
 
 
     <!-- Potensi RW Section -->
-    <section id="potensi" class="potensi">
+    <section id="potensi" class="potensi animate-on-scroll">
       <h2>Potensi Rukun Warga</h2>
       <p class="section-subtitle">Mengenal lebih dekat keunggulan di setiap sudut kelurahan.</p>
       
@@ -52,9 +57,13 @@
     </div>
 
     <!-- Footer -->
-    <footer>
+    <footer class="animate-on-scroll">
       <p>&copy; 2026 KKN Kelurahan Galung Maloang. Dibuat dengan ❤️ oleh Mahasiswa KKN.</p>
     </footer>
+
+    <!-- Floating Buttons -->
+    <button id="btn-back-to-top" title="Kembali ke atas">&#8679;</button>
+    <button id="btn-text-size" title="Perbesar Teks">A+</button>
 
     <script type="module" src="/src/main.js"></script>
   </body>
