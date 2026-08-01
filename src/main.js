@@ -170,4 +170,131 @@ window.addEventListener('click', (e) => {
 });
 
 // Initialize
-document.addEventListener('DOMContentLoaded', renderCards);
+document.addEventListener('DOMContentLoaded', () => {
+  if (rwGrid) renderCards();
+  if (document.getElementById('proker-grid')) renderProkers();
+});
+
+// --- PROKER GALLERY LOGIC ---
+const prokerData = [
+  {
+    id: 1,
+    judul: "Sosialisasi UMKM",
+    deskripsiSingkat: "Membantu warga dalam digitalisasi produk lokal.",
+    deskripsiLengkap: "Program kerja ini berfokus pada pendampingan pelaku UMKM di desa untuk mendaftarkan usaha mereka di Google Maps dan platform digital. Tujuannya adalah memperluas jangkauan pasar dan meningkatkan penjualan produk-produk unggulan desa.",
+    gambar: ["./rw-placeholder.png", "./hero.png", "./rw-placeholder.png"]
+  },
+  {
+    id: 2,
+    judul: "Kerja Bakti Lingkungan",
+    deskripsiSingkat: "Gotong royong membersihkan saluran air bersama pemuda desa.",
+    deskripsiLengkap: "Bekerja sama dengan Karang Taruna, kami melakukan kerja bakti rutin setiap minggu untuk membersihkan parit dan fasilitas umum. Kami juga menempatkan beberapa tempat sampah baru di titik-titik strategis.",
+    gambar: ["./rw-placeholder.png", "./hero.png"]
+  },
+  {
+    id: 3,
+    judul: "Edukasi Anak Sekolah",
+    deskripsiSingkat: "Mengajar tambahan untuk anak SD di balai warga.",
+    deskripsiLengkap: "Kami mengadakan kelas bimbingan belajar gratis untuk anak-anak SD yang berfokus pada literasi dasar dan matematika menyenangkan. Antusiasme anak-anak sangat tinggi setiap sore.",
+    gambar: ["./hero.png", "./rw-placeholder.png", "./hero.png", "./rw-placeholder.png"]
+  },
+  {
+    id: 4,
+    judul: "Pemetaan Potensi RW",
+    deskripsiSingkat: "Survei langsung ke lapangan untuk pendataan potensi.",
+    deskripsiLengkap: "Untuk memaksimalkan potensi desa, kami melakukan survei door-to-door ke setiap RW untuk mengumpulkan data akurat terkait komoditas pertanian, peternakan, dan kerajinan warga setempat.",
+    gambar: ["./rw-placeholder.png", "./hero.png", "./rw-placeholder.png"]
+  },
+  {
+    id: 5,
+    judul: "Penanaman Bibit",
+    deskripsiSingkat: "Program penghijauan desa dengan bibit produktif.",
+    deskripsiLengkap: "Bekerja sama dengan dinas pertanian, kami membagikan dan menanam ratusan bibit pohon buah seperti mangga, durian, dan alpukat di lahan-lahan kosong serta pekarangan rumah warga.",
+    gambar: ["./rw-placeholder.png"]
+  },
+  {
+    id: 6,
+    judul: "Pelatihan Kewirausahaan",
+    deskripsiSingkat: "Pelatihan packaging dan branding produk.",
+    deskripsiLengkap: "Pelatihan difokuskan pada ibu-ibu PKK yang memproduksi jajanan lokal agar mereka mampu mendesain kemasan yang lebih modern dan tahan lama, sehingga harga jual produk bisa meningkat.",
+    gambar: ["./hero.png", "./rw-placeholder.png"]
+  }
+];
+
+const prokerGrid = document.getElementById('proker-grid');
+const prokerModal = document.getElementById('proker-modal');
+const closeProkerBtn = document.getElementById('close-proker-btn');
+const prokerMainImg = document.getElementById('proker-main-img');
+const prokerThumbnails = document.getElementById('proker-thumbnails');
+const prokerTitle = document.getElementById('proker-title');
+const prokerDesc = document.getElementById('proker-desc');
+
+function renderProkers() {
+  if (!prokerGrid) return;
+  prokerGrid.innerHTML = '';
+  prokerData.forEach(proker => {
+    const item = document.createElement('div');
+    item.className = 'gallery-item';
+    item.innerHTML = `
+      <img src="${proker.gambar[0]}" alt="${proker.judul}">
+      <div class="item-overlay">
+        <h3>${proker.judul}</h3>
+        <p>${proker.deskripsiSingkat}</p>
+      </div>
+    `;
+    item.addEventListener('click', () => openProkerModal(proker));
+    prokerGrid.appendChild(item);
+  });
+}
+
+function openProkerModal(proker) {
+  prokerTitle.textContent = proker.judul;
+  prokerDesc.textContent = proker.deskripsiLengkap;
+  
+  prokerMainImg.src = proker.gambar[0];
+  
+  prokerThumbnails.innerHTML = '';
+  proker.gambar.forEach((imgSrc, index) => {
+    const thumb = document.createElement('img');
+    thumb.src = imgSrc;
+    if (index === 0) thumb.classList.add('active');
+    
+    thumb.addEventListener('click', () => {
+      prokerMainImg.style.opacity = 0;
+      setTimeout(() => {
+        prokerMainImg.src = imgSrc;
+        prokerMainImg.style.opacity = 1;
+      }, 150);
+      
+      document.querySelectorAll('.proker-thumbnails img').forEach(t => t.classList.remove('active'));
+      thumb.classList.add('active');
+    });
+    
+    prokerThumbnails.appendChild(thumb);
+  });
+
+  prokerModal.style.display = 'block';
+  setTimeout(() => {
+    prokerModal.classList.add('show');
+  }, 10);
+  document.body.style.overflow = 'hidden';
+}
+
+function closeProkerModalFunc() {
+  if (!prokerModal) return;
+  prokerModal.classList.remove('show');
+  setTimeout(() => {
+    prokerModal.style.display = 'none';
+  }, 300);
+  document.body.style.overflow = 'auto';
+}
+
+if (closeProkerBtn) {
+  closeProkerBtn.addEventListener('click', closeProkerModalFunc);
+}
+
+window.addEventListener('click', (e) => {
+  if (e.target === prokerModal) {
+    closeProkerModalFunc();
+  }
+});

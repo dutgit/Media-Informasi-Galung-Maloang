@@ -39,54 +39,26 @@
           <p>Beberapa momen dari eksekusi program kerja KKN yang telah kami laksanakan bersama warga.</p>
         </div>
 
-        <div class="grid-gallery">
-          <!-- Gallery Item 1 -->
-          <div class="gallery-item">
-            <img src="./rw-placeholder.png" alt="Proker 1">
-            <div class="item-overlay">
-              <h3>Sosialisasi UMKM</h3>
-              <p>Membantu warga dalam digitalisasi produk lokal.</p>
-            </div>
+        <div class="grid-gallery" id="proker-grid">
+          <!-- Rendered by JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Modal Proker -->
+    <div id="proker-modal" class="modal">
+      <div class="modal-content proker-modal-content">
+        <span class="close-btn" id="close-proker-btn">&times;</span>
+        <div class="proker-modal-body">
+          <div class="proker-gallery-main">
+            <img id="proker-main-img" src="" alt="Main Proker Image">
           </div>
-          <!-- Gallery Item 2 -->
-          <div class="gallery-item">
-            <img src="./rw-placeholder.png" alt="Proker 2">
-            <div class="item-overlay">
-              <h3>Kerja Bakti Lingkungan</h3>
-              <p>Gotong royong membersihkan saluran air bersama pemuda desa.</p>
-            </div>
+          <div class="proker-thumbnails" id="proker-thumbnails">
+            <!-- Thumbnails rendered by JS -->
           </div>
-          <!-- Gallery Item 3 -->
-          <div class="gallery-item">
-            <img src="./rw-placeholder.png" alt="Proker 3">
-            <div class="item-overlay">
-              <h3>Edukasi Anak Sekolah</h3>
-              <p>Mengajar tambahan untuk anak SD di balai warga.</p>
-            </div>
-          </div>
-          <!-- Gallery Item 4 -->
-          <div class="gallery-item">
-            <img src="./rw-placeholder.png" alt="Proker 4">
-            <div class="item-overlay">
-              <h3>Pemetaan Potensi RW</h3>
-              <p>Survei langsung ke lapangan untuk pendataan potensi.</p>
-            </div>
-          </div>
-          <!-- Gallery Item 5 -->
-          <div class="gallery-item">
-            <img src="./rw-placeholder.png" alt="Proker 5">
-            <div class="item-overlay">
-              <h3>Penanaman Bibit</h3>
-              <p>Program penghijauan desa dengan bibit produktif.</p>
-            </div>
-          </div>
-          <!-- Gallery Item 6 -->
-          <div class="gallery-item">
-            <img src="./rw-placeholder.png" alt="Proker 6">
-            <div class="item-overlay">
-              <h3>Pelatihan Kewirausahaan</h3>
-              <p>Pelatihan packaging dan branding produk.</p>
-            </div>
+          <div class="modal-text proker-text">
+            <h2 id="proker-title">Judul Proker</h2>
+            <p id="proker-desc">Deskripsi lengkap mengenai kegiatan ini.</p>
           </div>
         </div>
       </div>
