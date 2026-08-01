@@ -365,7 +365,7 @@ if (btnBackToTop) {
 
 if (btnTextSize) {
   btnTextSize.addEventListener('click', () => {
-    document.body.classList.toggle('large-text');
+    document.documentElement.classList.toggle('large-text');
   });
 }
 

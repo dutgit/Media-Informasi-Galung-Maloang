@@ -412,11 +412,17 @@ h1, h2, h3 {
   top: 15px;
   right: 25px;
   color: #fff;
-  font-size: 2rem;
+  background-color: rgba(0, 0, 0, 0.6);
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-size: 1.8rem;
   font-weight: bold;
   cursor: pointer;
   z-index: 10;
-  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
   transition: var(--transition);
 }
 
@@ -767,13 +773,9 @@ footer {
 }
 
 /* --- Accessibility Large Text --- */
-body.large-text {
-  font-size: 1.15rem;
+html.large-text {
+  font-size: 115%; /* Scales up all rem-based units */
 }
-body.large-text h1 { font-size: 120%; }
-body.large-text h2 { font-size: 120%; }
-body.large-text h3 { font-size: 120%; }
-body.large-text p { font-size: 1.15rem; }
 
 /* --- Scroll Animations --- */
 .animate-on-scroll {
