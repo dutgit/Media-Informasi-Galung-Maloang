@@ -343,25 +343,6 @@ window.addEventListener('click', (e) => {
 
 // --- UI / UX ENHANCEMENTS ---
 
-// Hamburger Menu Logic
-const hamburger = document.getElementById('hamburger-menu');
-const navLinks = document.querySelector('.nav-links');
-
-if (hamburger && navLinks) {
-  hamburger.addEventListener('click', () => {
-    hamburger.classList.toggle('active');
-    navLinks.classList.toggle('active');
-  });
-
-  // Close menu when clicking a link
-  navLinks.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => {
-      hamburger.classList.remove('active');
-      navLinks.classList.remove('active');
-    });
-  });
-}
-
 // Floating Buttons Logic
 const btnBackToTop = document.getElementById('btn-back-to-top');
 const btnTextSize = document.getElementById('btn-text-size');
