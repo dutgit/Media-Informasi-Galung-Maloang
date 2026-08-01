@@ -182,14 +182,14 @@ const prokerData = [
     judul: "Sosialisasi UMKM",
     deskripsiSingkat: "Membantu warga dalam digitalisasi produk lokal.",
     deskripsiLengkap: "Program kerja ini berfokus pada pendampingan pelaku UMKM di desa untuk mendaftarkan usaha mereka di Google Maps dan platform digital. Tujuannya adalah memperluas jangkauan pasar dan meningkatkan penjualan produk-produk unggulan desa.",
-    gambar: ["./rw-placeholder.png", "./hero.png", "./rw-placeholder.png"]
+    gambar: ["./hero.png", "./rw-placeholder.png", "./hero.png", "./rw-placeholder.png"]
   },
   {
     id: 2,
     judul: "Kerja Bakti Lingkungan",
     deskripsiSingkat: "Gotong royong membersihkan saluran air bersama pemuda desa.",
     deskripsiLengkap: "Bekerja sama dengan Karang Taruna, kami melakukan kerja bakti rutin setiap minggu untuk membersihkan parit dan fasilitas umum. Kami juga menempatkan beberapa tempat sampah baru di titik-titik strategis.",
-    gambar: ["./rw-placeholder.png", "./hero.png"]
+    gambar: ["./rw-placeholder.png", "./hero.png", "./rw-placeholder.png", "./hero.png"]
   },
   {
     id: 3,
@@ -203,21 +203,21 @@ const prokerData = [
     judul: "Pemetaan Potensi RW",
     deskripsiSingkat: "Survei langsung ke lapangan untuk pendataan potensi.",
     deskripsiLengkap: "Untuk memaksimalkan potensi desa, kami melakukan survei door-to-door ke setiap RW untuk mengumpulkan data akurat terkait komoditas pertanian, peternakan, dan kerajinan warga setempat.",
-    gambar: ["./rw-placeholder.png", "./hero.png", "./rw-placeholder.png"]
+    gambar: ["./rw-placeholder.png", "./hero.png", "./rw-placeholder.png", "./hero.png"]
   },
   {
     id: 5,
     judul: "Penanaman Bibit",
     deskripsiSingkat: "Program penghijauan desa dengan bibit produktif.",
     deskripsiLengkap: "Bekerja sama dengan dinas pertanian, kami membagikan dan menanam ratusan bibit pohon buah seperti mangga, durian, dan alpukat di lahan-lahan kosong serta pekarangan rumah warga.",
-    gambar: ["./rw-placeholder.png"]
+    gambar: ["./hero.png", "./rw-placeholder.png", "./hero.png", "./rw-placeholder.png"]
   },
   {
     id: 6,
     judul: "Pelatihan Kewirausahaan",
     deskripsiSingkat: "Pelatihan packaging dan branding produk.",
     deskripsiLengkap: "Pelatihan difokuskan pada ibu-ibu PKK yang memproduksi jajanan lokal agar mereka mampu mendesain kemasan yang lebih modern dan tahan lama, sehingga harga jual produk bisa meningkat.",
-    gambar: ["./hero.png", "./rw-placeholder.png"]
+    gambar: ["./rw-placeholder.png", "./hero.png", "./rw-placeholder.png", "./hero.png"]
   }
 ];
 
@@ -228,6 +228,11 @@ const prokerMainImg = document.getElementById('proker-main-img');
 const prokerThumbnails = document.getElementById('proker-thumbnails');
 const prokerTitle = document.getElementById('proker-title');
 const prokerDesc = document.getElementById('proker-desc');
+const slideLeftBtn = document.getElementById('proker-slide-left');
+const slideRightBtn = document.getElementById('proker-slide-right');
+
+let currentProkerImages = [];
+let currentImageIndex = 0;
 
 function renderProkers() {
   if (!prokerGrid) return;
@@ -247,27 +252,44 @@ function renderProkers() {
   });
 }
 
+function updateProkerMainImage(index) {
+  if (index < 0) index = currentProkerImages.length - 1;
+  if (index >= currentProkerImages.length) index = 0;
+  
+  currentImageIndex = index;
+  
+  prokerMainImg.style.opacity = 0;
+  setTimeout(() => {
+    prokerMainImg.src = currentProkerImages[currentImageIndex];
+    prokerMainImg.style.opacity = 1;
+  }, 150);
+  
+  document.querySelectorAll('.proker-thumbnails img').forEach((t, i) => {
+    if (i === currentImageIndex) {
+      t.classList.add('active');
+      t.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+    } else {
+      t.classList.remove('active');
+    }
+  });
+}
+
 function openProkerModal(proker) {
   prokerTitle.textContent = proker.judul;
   prokerDesc.textContent = proker.deskripsiLengkap;
   
-  prokerMainImg.src = proker.gambar[0];
+  currentProkerImages = proker.gambar;
+  currentImageIndex = 0;
+  prokerMainImg.src = currentProkerImages[0];
   
   prokerThumbnails.innerHTML = '';
-  proker.gambar.forEach((imgSrc, index) => {
+  currentProkerImages.forEach((imgSrc, index) => {
     const thumb = document.createElement('img');
     thumb.src = imgSrc;
     if (index === 0) thumb.classList.add('active');
     
     thumb.addEventListener('click', () => {
-      prokerMainImg.style.opacity = 0;
-      setTimeout(() => {
-        prokerMainImg.src = imgSrc;
-        prokerMainImg.style.opacity = 1;
-      }, 150);
-      
-      document.querySelectorAll('.proker-thumbnails img').forEach(t => t.classList.remove('active'));
-      thumb.classList.add('active');
+      updateProkerMainImage(index);
     });
     
     prokerThumbnails.appendChild(thumb);
@@ -291,6 +313,14 @@ function closeProkerModalFunc() {
 
 if (closeProkerBtn) {
   closeProkerBtn.addEventListener('click', closeProkerModalFunc);
+}
+
+if (slideLeftBtn) {
+  slideLeftBtn.addEventListener('click', () => updateProkerMainImage(currentImageIndex - 1));
+}
+
+if (slideRightBtn) {
+  slideRightBtn.addEventListener('click', () => updateProkerMainImage(currentImageIndex + 1));
 }
 
 window.addEventListener('click', (e) => {

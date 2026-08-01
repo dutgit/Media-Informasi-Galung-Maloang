@@ -611,6 +611,35 @@ footer {
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
+}
+
+.slide-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  font-size: 2rem;
+  padding: 10px 15px;
+  cursor: pointer;
+  z-index: 10;
+  transition: background 0.3s ease;
+  border-radius: 5px;
+}
+
+.slide-btn:hover {
+  background: rgba(0, 0, 0, 0.8);
+  color: var(--accent-color);
+}
+
+.left-btn {
+  left: 10px;
+}
+
+.right-btn {
+  right: 10px;
 }
 
 .proker-gallery-main img {
