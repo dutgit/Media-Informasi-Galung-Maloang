@@ -176,7 +176,7 @@ function openModal(rw) {
       </div>
       <p><strong>Fokus:</strong> ${rw.tag}</p>
       <p>${rw.deskripsiLengkap}</p>
-      <a href="https://wa.me/${rw.whatsapp}" target="_blank" class="btn-whatsapp">
+      <a href="https://wa.me/${rw.whatsapp}" target="_blank" rel="noopener noreferrer" class="btn-whatsapp">
         <i style="margin-right: 8px;">💬</i>Hubungi Ketua RW
       </a>
     </div>
