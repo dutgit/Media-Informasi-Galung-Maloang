@@ -97,7 +97,7 @@ const rwData = [
     deskripsiSingkat: "Pusat budidaya ikan air tawar seperti lele dan nila dengan sistem bioflok yang modern.",
     deskripsiLengkap: "Keterbatasan lahan tidak membatasi warga RW 06. Mereka mengadopsi teknologi bioflok untuk budidaya ikan air tawar di pekarangan. Hasil panen ikan disuplai ke pasar tradisional dan juga diolah menjadi abon ikan yang memiliki masa simpan panjang.",
     keunggulan: ["Ikan Nila Segar", "Abon Lele", "Budidaya Bioflok"],
-    gambar: ["./rw-placeholder.png", "./hero.png", "./rw-placeholder.png"],
+    gambar: ["./rw6-1.jpg", "./rw6-2.jpg", "./rw6-3.jpg"],
     whatsapp: "6281234567895"
   },
   {
