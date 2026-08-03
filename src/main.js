@@ -93,10 +93,10 @@ const rwData = [
   {
     id: 6,
     nama: "RW 06",
-    tag: "Budidaya Perikanan",
-    deskripsiSingkat: "Pusat budidaya ikan air tawar seperti lele dan nila dengan sistem bioflok yang modern.",
-    deskripsiLengkap: "Keterbatasan lahan tidak membatasi warga RW 06. Mereka mengadopsi teknologi bioflok untuk budidaya ikan air tawar di pekarangan. Hasil panen ikan disuplai ke pasar tradisional dan juga diolah menjadi abon ikan yang memiliki masa simpan panjang.",
-    keunggulan: ["Ikan Nila Segar", "Abon Lele", "Budidaya Bioflok"],
+    tag: "Perumahan Sawerigading",
+    deskripsiSingkat: "Kawasan permukiman tertata rapi, aman, dan nyaman dengan kelengkapan infrastruktur jalan yang baik.",
+    deskripsiLengkap: "RW 06 merupakan kawasan permukiman yang asri dan sangat tertata, dikenal sebagai wilayah Sawerigading yang ditandai dengan gapura ikonis di pintu masuknya. Keamanan dan kenyamanan warga sangat diperhatikan dengan adanya sistem portal di akses jalan utama. Lingkungan ini didukung oleh jalan paving block yang terawat serta deretan rumah warga yang rapi, menciptakan suasana hunian yang damai, modern, dan harmonis.",
+    keunggulan: ["Gapura Sawerigading", "Keamanan Portal", "Infrastruktur Tertata"],
     gambar: ["./rw6-1.jpg", "./rw6-2.jpg", "./rw6-3.jpg"],
     whatsapp: "6281234567895"
   },
