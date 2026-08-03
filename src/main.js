@@ -225,7 +225,7 @@ function openModal(rw) {
     rwThumbnails.appendChild(thumb);
   });
   
-  modal.style.display = 'block';
+  modal.style.display = 'flex';
   // Small timeout to allow display:block to apply before adding class for opacity transition
   setTimeout(() => {
     modal.classList.add('show');
@@ -411,7 +411,7 @@ function openProkerModal(proker) {
     prokerThumbnails.appendChild(thumb);
   });
 
-  prokerModal.style.display = 'block';
+  prokerModal.style.display = 'flex';
   setTimeout(() => {
     prokerModal.classList.add('show');
   }, 10);
