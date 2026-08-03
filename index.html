@@ -56,9 +56,21 @@
 
     <!-- Modal Detail -->
     <div id="rw-modal" class="modal">
-      <div class="modal-content">
+      <div class="modal-content proker-modal-content">
         <span class="close-btn">&times;</span>
-        <div id="modal-body"></div>
+        <div id="modal-body" class="proker-modal-body">
+          <div class="proker-gallery-main">
+            <button class="slide-btn left-btn" id="rw-slide-left">&#10094;</button>
+            <img id="rw-main-img" src="" alt="Main RW Image">
+            <button class="slide-btn right-btn" id="rw-slide-right">&#10095;</button>
+          </div>
+          <div class="proker-thumbnails" id="rw-thumbnails">
+            <!-- Thumbnails rendered by JS -->
+          </div>
+          <div class="modal-text proker-text" id="rw-modal-text">
+            <!-- Text rendered by JS -->
+          </div>
+        </div>
       </div>
     </div>
 
