@@ -192,6 +192,7 @@ function openModal(rw) {
 }
 
 function closeModal() {
+  if (!modal) return;
   modal.classList.remove('show');
   setTimeout(() => {
     modal.style.display = 'none';
