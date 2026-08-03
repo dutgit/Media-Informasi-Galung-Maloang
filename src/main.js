@@ -83,10 +83,10 @@ const rwData = [
   {
     id: 5,
     nama: "RW 05",
-    tag: "Peternakan Terpadu",
-    deskripsiSingkat: "Fokus pada peternakan kambing etawa dan unggas dengan sistem kandang bersih terpadu.",
-    deskripsiLengkap: "Wilayah RW 05 memiliki lahan yang cukup luas untuk peternakan komunal. Warga berinovasi dengan sistem peternakan terpadu di mana kotoran ternak diolah langsung menjadi pupuk kompos untuk digunakan oleh RW 01 (Pertanian). Susu kambing etawa juga menjadi produk unggulan baru.",
-    keunggulan: ["Susu Kambing Etawa", "Telur Bebek", "Pupuk Kompos"],
+    tag: "Pusat Kegiatan Warga",
+    deskripsiSingkat: "Lingkungan perumahan asri dengan lapangan luas yang aktif digunakan untuk kegiatan warga, termasuk senam pagi mingguan.",
+    deskripsiLengkap: "RW 05 menonjolkan lingkungan permukiman yang bersih, tertata rapi, dan guyub. Memasuki gang yang semarak dengan hiasan merah putih, pengunjung akan merasakan suasana kekeluargaan yang erat. Di RW ini terdapat sebuah lapangan paving luas yang menjadi pusat interaksi; salah satu kegiatan rutin yang paling meriah adalah senam bersama setiap hari Sabtu tepat pukul 07.00 pagi. Geliat kemandirian warga juga terlihat dari adanya usaha mikro seperti loket pembayaran resmi (PPOB) yang memudahkan transaksi sehari-hari.",
+    keunggulan: ["Senam Sabtu Pagi", "Lapangan Warga Luas", "Lingkungan Asri"],
     gambar: ["./rw5-1.jpg", "./rw5-2.jpg", "./rw5-3.jpg"],
     whatsapp: "6281234567894"
   },
