@@ -87,7 +87,7 @@ const rwData = [
     deskripsiSingkat: "Fokus pada peternakan kambing etawa dan unggas dengan sistem kandang bersih terpadu.",
     deskripsiLengkap: "Wilayah RW 05 memiliki lahan yang cukup luas untuk peternakan komunal. Warga berinovasi dengan sistem peternakan terpadu di mana kotoran ternak diolah langsung menjadi pupuk kompos untuk digunakan oleh RW 01 (Pertanian). Susu kambing etawa juga menjadi produk unggulan baru.",
     keunggulan: ["Susu Kambing Etawa", "Telur Bebek", "Pupuk Kompos"],
-    gambar: ["./rw-placeholder.png", "./hero.png", "./rw-placeholder.png"],
+    gambar: ["./rw5-1.jpg", "./rw5-2.jpg", "./rw5-3.jpg"],
     whatsapp: "6281234567894"
   },
   {
