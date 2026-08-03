@@ -482,6 +482,7 @@ h1, h2, h3 {
   border-radius: 20px;
   width: 90%;
   max-width: 800px;
+  margin: auto;
   position: relative;
   transform: translateY(20px);
   transition: transform 0.3s ease;
